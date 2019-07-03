@@ -1,5 +1,4 @@
-FROM python:slim-stretch
-ENV PYTHONUNBUFFERED 1
+FROM python:3.5
 
 ADD . /home/test
 
