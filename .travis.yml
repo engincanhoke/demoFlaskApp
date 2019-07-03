@@ -5,5 +5,5 @@ services:
   - docker
 
 install:
-  - docker build -t mertongngl/flasktest:$TRAVIS_BUILD_NUMBER .
-  - docker push mertongngl/flasktest:$TRAVIS_BUILD_NUMBER
+  - docker build -t mertongngl/flasktest:latest .
+  - docker push mertongngl/flasktest:latest
