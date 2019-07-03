@@ -7,8 +7,5 @@ services:
 deploy:
   provider: script
   script:
-    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-    - docker build -t mertongngl/flaskdemo:$TRAVIS_BUILD_NUMBER .
-    - docker push mertongngl/flaskdemo:latest
-  on:
-    branch: master
+    - docker build -t mertongngl/flasktest:$TRAVIS_BUILD_NUMBER .
+    - docker push mertongngl/flasktest:$TRAVIS_BUILD_NUMBER
