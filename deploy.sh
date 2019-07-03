@@ -1,7 +1,4 @@
 #!/bin/bash
-set -euo pipefail
-
-IFS=$'\n\t'
 
 az login --service-principal -u $SERVICE_PRINCIPAL_ID -p $SERVICE_PRINCIPAL_SECRET --tenant $TENANT 1> /dev/null
 
