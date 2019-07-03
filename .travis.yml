@@ -6,4 +6,5 @@ services:
 
 install:
   - docker build -t mertongngl/flasktest:latest .
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push mertongngl/flasktest:latest
