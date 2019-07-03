@@ -4,12 +4,11 @@ language: python
 services:
   - docker
 
-
-before_install:
-  - docker build -t mertongngl/flaskdemo:latest .
-
 deploy:
   provider: script
-  script: bash docker_push
+  script:
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+    - docker build -t mertongngl/flaskdemo:$TRAVIS_BUILD_NUMBER .
+    - docker push mertongngl/flaskdemo:latest
   on:
     branch: master
